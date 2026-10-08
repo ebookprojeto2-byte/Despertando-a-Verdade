@@ -1,168 +1,503 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080a09">
-  <meta name="description" content="Despertando a Verdade: um e-book para refletir sobre ansiedade, saúde emocional e os desafios da vida.">
-  <title>Despertando a Verdade | E-book</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070908">
+  <meta name="description" content="Despertando a Verdade — uma leitura sobre ansiedade, vida real e saúde emocional.">
+  <title>Despertando a Verdade — E-book</title>
   <style>
-    :root { color-scheme: dark; --bg:#080a09; --panel:#111613; --green:#00e676; --white:#f5f7f5; --muted:#b5c0b9; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:radial-gradient(ellipse at 50% 0%, #123021 0, var(--bg) 48%); color:var(--white); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
-    .wrap { width:min(100% - 32px, 980px); margin:auto; }
-    header { padding:24px 0; display:flex; justify-content:space-between; align-items:center; gap:16px; }
-    .brand { font-weight:900; letter-spacing:.12em; font-size:.9rem; }
-    .brand span { color:var(--green); }
-    .tag { border:1px solid #27543a; color:#a9ffc9; border-radius:999px; padding:6px 10px; font-size:.75rem; }
-    .hero { padding:56px 0 42px; display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:38px; }
-    h1 { font-size:clamp(2.5rem, 7vw, 5rem); line-height:.98; letter-spacing:-.055em; margin:18px 0; }
-    h1 span { color:var(--green); }
-    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:.18em; font-size:.76rem; font-weight:800; }
-    .lead { color:var(--muted); font-size:1.12rem; max-width:620px; }
-    .cover { min-height:360px; border:1px solid #28543a; border-radius:22px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(145deg,#10271a,#080a09 70%); box-shadow:0 22px 70px #0008; position:relative; overflow:hidden; }
-    .cover:before { content:""; position:absolute; width:260px; height:260px; border:1px solid #00e67670; border-radius:50%; right:-90px; top:40px; box-shadow:0 0 0 25px #00e67608,0 0 0 50px #00e67606; }
-    .cover small { color:#a7b9ad; letter-spacing:.18em; z-index:1; }
-    .cover strong { font-size:clamp(2rem,5vw,3.3rem); line-height:.98; letter-spacing:-.04em; z-index:1; }
-    .cover strong span { color:var(--green); }
-    .cover .bottom { color:#a7b9ad; font-size:.82rem; z-index:1; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:0; border-radius:12px; padding:15px 20px; font-weight:900; cursor:pointer; transition:transform .15s; }
-    .btn:hover { transform:translateY(-2px); }
-    .primary { background:var(--green); color:#061109; box-shadow:0 8px 28px #00e67625; }
-    .secondary { border:1px solid #365443; color:var(--white); background:#111613; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
-    section { padding:40px 0; }
-    h2 { font-size:clamp(1.65rem,4vw,2.4rem); line-height:1.1; margin:0 0 14px; }
-    .muted { color:var(--muted); }
-    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
-    .card { background:var(--panel); border:1px solid #25372c; border-radius:16px; padding:22px; }
-    .num { color:var(--green); font-weight:900; font-size:.8rem; letter-spacing:.1em; }
-    .card h3 { margin:10px 0 8px; font-size:1.1rem; }
-    .card p { margin:0; color:var(--muted); font-size:.95rem; }
-    .buybox { background:linear-gradient(135deg,#12271a,#101411); border:1px solid #28613e; border-radius:22px; padding:clamp(22px,5vw,40px); display:grid; grid-template-columns:1fr auto; align-items:center; gap:24px; }
-    .price { font-size:2.6rem; line-height:1; font-weight:900; margin:10px 0; }
-    .price small { font-size:.9rem; font-weight:500; color:var(--muted); }
-    .fine { font-size:.82rem; color:var(--muted); }
-    .steps { padding-left:22px; color:var(--muted); }
-    .steps li { margin:8px 0; }
-    footer { border-top:1px solid #233027; margin-top:32px; padding:26px 0 40px; color:#92a098; font-size:.85rem; }
-    dialog { width:min(92%,460px); border:1px solid #28613e; border-radius:18px; padding:24px; background:#101511; color:var(--white); }
-    dialog::backdrop { background:#000b; }
-    .pix { background:#080a09; border:1px dashed #3e6b4d; border-radius:10px; padding:14px; overflow-wrap:anywhere; margin:14px 0; color:#b5ffc9; }
-    .dialog-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    @media(max-width:720px) { .hero { grid-template-columns:1fr; padding-top:28px; gap:26px; } .cover { min-height:300px; } .cards { grid-template-columns:1fr; } .buybox { grid-template-columns:1fr; } .buybox .btn { width:100%; } header { align-items:flex-start; } }
+    :root{
+      --bg:#070908;
+      --bg-soft:#0b0f0c;
+      --card:#0f1511;
+      --card-2:#121914;
+      --text:#f7faf8;
+      --muted:#9eaaa2;
+      --line:#253128;
+      --green:#00f078;
+      --green-soft:#a7ffd0;
+      --shadow:0 30px 90px rgba(0,0,0,.46);
+      --radius:22px;
+      --container:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(0,240,120,.10), transparent 27%),
+        radial-gradient(circle at 5% 20%, rgba(0,240,120,.05), transparent 22%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      line-height:1.55;
+    }
+    body:before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:52px 52px;
+      mask-image:linear-gradient(to bottom, black, transparent 75%);
+    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(var(--container), calc(100% - 40px)); margin:0 auto}
+    .nav-wrap{
+      position:sticky;top:0;z-index:30;
+      background:rgba(7,9,8,.76);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{
+      font-weight:950;letter-spacing:.13em;font-size:.82rem;
+      display:flex;align-items:center;gap:9px
+    }
+    .brand-mark{
+      width:26px;height:26px;border:1px solid rgba(0,240,120,.5);
+      display:grid;place-items:center;border-radius:7px;color:var(--green);font-size:.8rem
+    }
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:.84rem;color:#d9e1dc}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{
+      background:var(--green);color:#031108;font-weight:950;
+      padding:11px 16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,240,120,.13)
+    }
+
+    .hero{padding:92px 0 74px;min-height:calc(100vh - 74px);display:grid;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:68px;align-items:center}
+    .eyebrow{
+      color:var(--green);font-weight:900;font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;
+      display:inline-flex;align-items:center;gap:10px
+    }
+    .eyebrow:before{content:"";width:30px;height:1px;background:var(--green)}
+    .hero h1{
+      margin:22px 0 22px;
+      font-size:clamp(3.6rem,8vw,7.1rem);
+      line-height:.87;letter-spacing:-.075em;font-weight:950
+    }
+    .hero h1 .accent{color:var(--green)}
+    .hero-copy{max-width:650px;color:var(--muted);font-size:1.13rem}
+    .hero-copy strong{color:#fff}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{
+      border-radius:13px;padding:15px 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      font-weight:950;font-size:.9rem;border:1px solid transparent;cursor:pointer;transition:.2s ease
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--green);color:#041109;box-shadow:0 14px 38px rgba(0,240,120,.13)}
+    .btn-secondary{background:#0e1310;border-color:#334138;color:#fff}
+    .micro{color:#7e8c83;font-size:.77rem;margin-top:15px}
+
+    .visual{position:relative;min-height:555px;display:grid;place-items:center}
+    .orb{
+      position:absolute;width:410px;height:410px;border-radius:50%;
+      background:radial-gradient(circle,rgba(0,240,120,.22),rgba(0,240,120,.03) 58%,transparent 70%);
+      filter:blur(5px)
+    }
+    .book-shadow{position:absolute;width:300px;height:40px;background:rgba(0,0,0,.6);filter:blur(20px);bottom:86px}
+    .book{
+      position:relative;width:300px;aspect-ratio:.70;padding:31px 27px;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(0,240,120,.18), transparent 21%),
+        linear-gradient(145deg,#173d27 0%,#0d1711 55%,#080b09 100%);
+      border-radius:5px 20px 20px 5px;border:1px solid rgba(116,215,153,.55);
+      box-shadow:22px 32px 65px rgba(0,0,0,.62), inset 5px 0 0 rgba(255,255,255,.035);
+      transform:rotate(3.2deg) perspective(900px) rotateY(-7deg);
+      overflow:hidden;
+    }
+    .book:before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(108deg,transparent 24%,rgba(255,255,255,.07) 49%,transparent 63%);
+    }
+    .book:after{
+      content:"";position:absolute;width:310px;height:310px;right:-150px;top:75px;
+      border:1px solid rgba(0,240,120,.55);border-radius:50%;
+      box-shadow:0 0 0 25px rgba(0,240,120,.045),0 0 0 50px rgba(0,240,120,.02)
+    }
+    .book-top,.book-title,.book-bottom{position:relative;z-index:2}
+    .book-top{font-size:.61rem;letter-spacing:.2em;color:#badbc7;font-weight:850}
+    .book-title{
+      margin-top:130px;font-size:3.32rem;line-height:.85;
+      letter-spacing:-.075em;font-weight:950
+    }
+    .book-title span{color:var(--green)}
+    .book-bottom{position:absolute;bottom:26px;left:27px;color:#abc0b2;font-size:.65rem;letter-spacing:.09em;line-height:1.8}
+    .book-bottom b{display:block;color:var(--green);font-size:1.45rem;line-height:1;margin-bottom:7px}
+    .floating-card{
+      position:absolute;right:4%;top:12%;background:rgba(14,20,16,.92);
+      border:1px solid #2c4435;border-radius:16px;padding:13px 15px;
+      box-shadow:var(--shadow);display:flex;gap:11px;align-items:center
+    }
+    .floating-card .check{width:29px;height:29px;border-radius:9px;background:rgba(0,240,120,.13);color:var(--green);display:grid;place-items:center;font-weight:900}
+    .floating-card div:last-child{font-size:.78rem;color:#d7e1da}.floating-card b{display:block;color:#fff;margin-bottom:1px}
+
+    .proof-bar{border-block:1px solid var(--line);background:rgba(10,13,11,.7)}
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:19px 0}
+    .proof-item{display:flex;align-items:center;justify-content:center;gap:9px;color:#d6ded8;font-size:.84rem}
+    .proof-item .icon{color:var(--green);font-weight:900}
+
+    section{padding:92px 0}
+    .section-head{max-width:760px;margin-bottom:34px}
+    .section-title{font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.06em;margin:13px 0 15px;font-weight:950}
+    .section-copy{color:var(--muted);font-size:1.02rem;max-width:690px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature{
+      padding:28px;min-height:250px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(145deg,#131a15,#0c110e);position:relative;overflow:hidden
+    }
+    .feature:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-95px;bottom:-95px;border:1px solid #00f08022}
+    .number{color:var(--green);font-size:.71rem;letter-spacing:.15em;font-weight:900}
+    .feature-icon{width:45px;height:45px;border-radius:13px;border:1px solid #00f0803f;background:#00f0800d;color:var(--green);display:grid;place-items:center;margin:22px 0 14px;font-size:1.18rem}
+    .feature h3{font-size:1.17rem;margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted);font-size:.92rem}
+
+    .manifesto{
+      display:grid;grid-template-columns:.36fr 1fr;gap:25px;align-items:start;
+      border:1px solid #2f6342;border-radius:var(--radius);padding:36px 38px;
+      background:linear-gradient(115deg,rgba(22,49,32,.85),rgba(11,16,13,.94))
+    }
+    .manifesto-mark{font-size:4.8rem;color:var(--green);font-weight:950;line-height:.8}
+    .manifesto p{font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.22;font-weight:820;margin:0}
+    .manifesto small{display:block;color:#9bab9f;font-size:.78rem;margin-top:17px}
+
+    .inside{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:55px;align-items:center
+    }
+    .inside-panel{
+      border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#0d130f
+    }
+    .chapter{
+      display:flex;gap:17px;padding:18px 0;border-bottom:1px solid var(--line)
+    }
+    .chapter:last-child{border-bottom:0}
+    .chapter-no{min-width:36px;height:36px;border-radius:10px;background:#00f08010;border:1px solid #00f08032;color:var(--green);display:grid;place-items:center;font-weight:900;font-size:.8rem}
+    .chapter h3{margin:0 0 4px;font-size:1rem}
+    .chapter p{margin:0;color:var(--muted);font-size:.86rem}
+    .side-stat{
+      display:flex;gap:14px;align-items:flex-start;margin-top:24px;padding:16px;border:1px solid #2b3a30;border-radius:14px;background:#0b100d
+    }
+    .side-stat b{font-size:1.12rem}.side-stat span{display:block;color:var(--muted);font-size:.79rem}
+
+    .purchase{
+      border:1px solid #326f47;border-radius:26px;padding:clamp(26px,5vw,52px);
+      background:radial-gradient(circle at 0 0,rgba(0,240,120,.13),transparent 36%),linear-gradient(120deg,#121c15,#0c110e);
+      display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center
+    }
+    .purchase h2{font-size:clamp(2.2rem,5vw,3.8rem);line-height:.95;letter-spacing:-.06em;margin:13px 0}
+    .purchase p{color:var(--muted);max-width:650px}
+    .price{font-size:3.1rem;font-weight:950;letter-spacing:-.06em;margin:14px 0}
+    .price small{font-size:.82rem;letter-spacing:0;color:#90a096;font-weight:500}
+    .purchase-action{min-width:235px}.purchase-action .btn{width:100%}.purchase-note{text-align:center;font-size:.72rem!important;margin-top:10px!important}
+
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .how-step{padding:24px;border-top:1px solid #41604b}
+    .how-step b{color:var(--green);font-size:.73rem;letter-spacing:.13em}
+    .how-step h3{margin:10px 0 6px}
+    .how-step p{color:var(--muted);font-size:.9rem;margin:0}
+
+    .faq{max-width:860px}
+    details{border-bottom:1px solid var(--line);padding:19px 0}
+    summary{cursor:pointer;font-weight:850;list-style:none;display:flex;justify-content:space-between;gap:16px}
+    summary:after{content:"+";color:var(--green);font-size:1.2rem}
+    details[open] summary:after{content:"−"}
+    details p{color:var(--muted);margin:11px 0 0;max-width:760px;font-size:.93rem}
+
+    footer{border-top:1px solid var(--line);padding:30px 0 46px;color:#7f8e84;font-size:.78rem}
+    .footer-row{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-title{color:#e3e9e5;font-weight:900;letter-spacing:.07em}
+
+    dialog{
+      width:min(94%,480px);border:1px solid #3a7650;border-radius:20px;
+      background:#0f1511;color:#fff;padding:26px;box-shadow:0 30px 120px rgba(0,0,0,.65)
+    }
+    dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(6px)}
+    dialog h2{font-size:2rem;line-height:1;margin:12px 0}
+    dialog p{color:var(--muted)}
+    .pix-box{background:#070908;border:1px dashed #45805b;border-radius:12px;padding:15px;color:var(--green-soft);font-weight:850;overflow-wrap:anywhere;margin:16px 0}
+    .dialog-actions{display:grid;gap:10px}.dialog-actions .btn{width:100%}
+
+    .toast{
+      position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);
+      background:#dfffea;color:#06130b;padding:11px 15px;border-radius:999px;
+      font-weight:850;font-size:.82rem;opacity:0;pointer-events:none;transition:.25s;z-index:50
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    @media(max-width:860px){
+      .hero-grid,.inside{grid-template-columns:1fr;gap:25px}
+      .visual{min-height:450px}
+      .features{grid-template-columns:1fr}
+      .inside-panel{order:2}
+      .inside-copy{order:1}
+      .purchase{grid-template-columns:1fr}
+      .purchase-action{min-width:0}
+      .purchase-action .btn{width:100%}
+      .how{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:1fr;gap:9px}
+      .proof-item{justify-content:flex-start}
+    }
+    @media(max-width:640px){
+      .container{width:min(var(--container),calc(100% - 28px))}
+      .nav{height:64px}
+      .nav-links a:not(.nav-cta){display:none}
+      .hero{padding:58px 0 38px}
+      .hero h1{font-size:3.45rem}
+      .visual{min-height:380px}
+      .book{width:235px}
+      .book-title{font-size:2.7rem;margin-top:110px}
+      .floating-card{right:0;top:2%}
+      section{padding:62px 0}
+      .manifesto{grid-template-columns:1fr;padding:28px}
+      .manifesto-mark{font-size:3.7rem}
+      .manifesto p{font-size:1.35rem}
+    }
   </style>
 </head>
 <body>
-  <header class="wrap">
-    <div class="brand">DESPERTANDO<span>+</span></div>
-    <div class="tag">E-BOOK DIGITAL</div>
-  </header>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="brand" href="#">
+        <span class="brand-mark">✳</span>
+        DESPERTANDO <span style="color:var(--green)">A VERDADE</span>
+      </a>
+      <div class="nav-links">
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#como-receber">Como receber</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="nav-cta" href="#comprar">Comprar ↗</a>
+      </div>
+    </nav>
+  </div>
 
   <main>
-    <div class="wrap hero">
-      <div>
-        <div class="eyebrow">Uma leitura para refletir e evoluir</div>
-        <h1>DESPERTANDO<br>A <span>VERDADE</span></h1>
-        <p class="lead">Entenda melhor a ansiedade, observe os desafios do mundo de hoje e conheça caminhos para cuidar da sua saúde emocional — com informação, reflexão e atitudes possíveis.</p>
-        <div class="actions">
-          <a class="btn primary" href="#comprar">QUERO MEU E-BOOK — R$ 19,90</a>
-          <a class="btn secondary" href="#conteudo">CONHECER O CONTEÚDO</a>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">E-book digital • PDF</div>
+          <h1>DESPERTE.<br>QUESTIONE.<br><span class="accent">EVOLUA.</span></h1>
+          <p class="hero-copy">
+            <strong>Despertando a Verdade</strong> é uma leitura para quem quer entender melhor a ansiedade,
+            enxergar os desafios da vida real e refletir sobre saúde emocional com mais consciência.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#comprar">QUERO MEU E-BOOK <span>↗</span></a>
+            <a class="btn btn-secondary" href="#conteudo">VER O CONTEÚDO</a>
+          </div>
+          <p class="micro">Uma proposta direta: menos aparência, mais consciência.</p>
         </div>
-        <p class="fine">Produto digital em PDF. Após o pagamento, envie o comprovante pelo WhatsApp para receber o arquivo.</p>
+
+        <div class="visual">
+          <div class="orb"></div>
+          <div class="book-shadow"></div>
+          <div class="floating-card">
+            <span class="check">✓</span>
+            <div><b>Compra simples</b>Pix + WhatsApp</div>
+          </div>
+          <div class="book" aria-label="Capa ilustrativa do e-book">
+            <div class="book-top">UM GUIA DE REFLEXÃO</div>
+            <div class="book-title">DESPERTANDO<br>A <span>VERDADE</span></div>
+            <div class="book-bottom"><b>✳</b>ANSIEDADE • VIDA REAL<br>SAÚDE EMOCIONAL</div>
+          </div>
+        </div>
       </div>
-      <div class="cover" role="img" aria-label="Capa ilustrativa do e-book Despertando a Verdade">
-        <small>UM GUIA DE REFLEXÃO</small>
-        <strong>DESPERTANDO<br>A <span>VERDADE</span></strong>
-        <div class="bottom">ANSIEDADE • VIDA • SAÚDE EMOCIONAL</div>
+    </section>
+
+    <div class="proof-bar">
+      <div class="container proof-grid">
+        <div class="proof-item"><span class="icon">✓</span> Material digital em PDF</div>
+        <div class="proof-item"><span class="icon">✓</span> Pagamento via Pix</div>
+        <div class="proof-item"><span class="icon">✓</span> Atendimento direto pelo WhatsApp</div>
       </div>
     </div>
 
-    <section class="wrap" id="conteudo">
-      <div class="eyebrow">O que você vai encontrar</div>
-      <h2>Mais consciência para lidar com a vida real.</h2>
-      <p class="muted">Um material para jovens que querem entender melhor o que sentem, refletir sobre suas escolhas e olhar para o futuro com mais clareza.</p>
-      <div class="cards">
-        <article class="card">
-          <div class="num">01 / ANSIEDADE</div>
-          <h3>Entenda o que acontece com você</h3>
-          <p>Conheça sinais comuns de ansiedade, possíveis fatores envolvidos e estratégias saudáveis para lidar com momentos difíceis.</p>
-        </article>
-        <article class="card">
-          <div class="num">02 / VIDA REAL</div>
-          <h3>Enxergue além das aparências</h3>
-          <p>Reflita sobre redes sociais, pressão dos outros, disciplina, escolhas, dinheiro e construção do futuro.</p>
-        </article>
-        <article class="card">
-          <div class="num">03 / SAÚDE EMOCIONAL</div>
-          <h3>Leve seus sentimentos a sério</h3>
-          <p>Aprenda sobre sinais de alerta relacionados à depressão e a importância de buscar apoio quando necessário.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="wrap" id="comprar">
-      <div class="buybox">
-        <div>
-          <div class="eyebrow">Comece sua leitura</div>
-          <h2>Despertando a Verdade</h2>
-          <p class="muted">Acesso digital em PDF.</p>
-          <div class="price">R$ 19,90 <small>pagamento único</small></div>
-          <p class="fine">O arquivo será enviado após a confirmação manual do pagamento.</p>
+    <section id="conteudo">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">O que você vai explorar</div>
+          <h2 class="section-title">Informação para pensar.<br>Reflexão para agir.</h2>
+          <p class="section-copy">
+            O e-book conecta saúde emocional e cotidiano para ajudar o leitor a observar o que sente,
+            questionar padrões e olhar para escolhas e futuro com mais clareza.
+          </p>
         </div>
-        <button class="btn primary" id="openPix">PAGAR COM PIX</button>
+
+        <div class="features">
+          <article class="feature">
+            <div class="number">CAPÍTULO 01 / MENTE</div>
+            <div class="feature-icon">◎</div>
+            <h3>Entendendo a ansiedade</h3>
+            <p>Sinais comuns, fatores envolvidos e estratégias saudáveis para lidar com momentos de ansiedade.</p>
+          </article>
+
+          <article class="feature">
+            <div class="number">CAPÍTULO 02 / REALIDADE</div>
+            <div class="feature-icon">↗</div>
+            <h3>A vida além das telas</h3>
+            <p>Redes sociais, comparação, pressão, disciplina, escolhas, dinheiro e construção do futuro.</p>
+          </article>
+
+          <article class="feature">
+            <div class="number">CAPÍTULO 03 / CUIDADO</div>
+            <div class="feature-icon">✳</div>
+            <h3>Saúde emocional importa</h3>
+            <p>Sinais de alerta relacionados à depressão e a importância de buscar apoio quando necessário.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="wrap">
-      <h2>Como receber seu e-book</h2>
-      <ol class="steps">
-        <li>Toque em “Pagar com Pix” e copie a chave informada.</li>
-        <li>Abra seu banco e faça o Pix de R$ 19,90.</li>
-        <li>Envie o comprovante pelo WhatsApp.</li>
-        <li>Depois de confirmar o recebimento, o vendedor enviará o PDF.</li>
-      </ol>
-      <a class="btn secondary" href="https://wa.me/5577991039416?text=Ol%C3%A1!%20Tenho%20interesse%20no%20e-book%20Despertando%20a%20Verdade%20e%20quero%20enviar%20meu%20comprovante." target="_blank" rel="noopener">FALAR PELO WHATSAPP</a>
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="manifesto">
+          <div class="manifesto-mark">“</div>
+          <div>
+            <p>Você não precisa ter todas as respostas hoje. <span>Mas pode começar fazendo perguntas melhores.</span></p>
+            <small>DESPERTANDO A VERDADE — UMA LEITURA PARA REFLETIR</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container inside">
+        <div class="inside-copy">
+          <div class="eyebrow">Por dentro do material</div>
+          <h2 class="section-title">Uma leitura organizada para ir direto ao ponto.</h2>
+          <p class="section-copy">
+            A proposta é explicar temas importantes de forma acessível, conectando conhecimento, reflexão
+            e situações que fazem parte da vida cotidiana.
+          </p>
+          <div class="side-stat">
+            <div class="feature-icon" style="margin:0;min-width:42px;height:42px">↗</div>
+            <div><b>Conteúdo educativo</b><span>Sem promessas de cura e sem fórmulas mágicas.</span></div>
+          </div>
+        </div>
+
+        <div class="inside-panel">
+          <div class="chapter">
+            <div class="chapter-no">01</div>
+            <div><h3>Ansiedade</h3><p>Como reconhecer, compreender e lidar melhor com situações difíceis.</p></div>
+          </div>
+          <div class="chapter">
+            <div class="chapter-no">02</div>
+            <div><h3>Realidade atual</h3><p>Pressões, redes sociais, escolhas e a construção do futuro.</p></div>
+          </div>
+          <div class="chapter">
+            <div class="chapter-no">03</div>
+            <div><h3>Depressão e cuidado</h3><p>Sinais de alerta, cuidado e busca de apoio.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comprar">
+      <div class="container">
+        <div class="purchase">
+          <div>
+            <div class="eyebrow">Sua próxima leitura começa aqui</div>
+            <h2>DESPERTANDO<br>A VERDADE</h2>
+            <p>Receba o e-book em PDF após a confirmação do pagamento. A entrega é combinada pelo WhatsApp.</p>
+            <div class="price">R$ 19,90 <small>pagamento único</small></div>
+            <p class="micro">Pagamento via Pix • Confirmação manual • Envio do PDF pelo WhatsApp</p>
+          </div>
+          <div class="purchase-action">
+            <button class="btn btn-primary" id="openPix">COMPRAR PELO PIX ↗</button>
+            <p class="purchase-note">Confira o destinatário antes de confirmar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-receber">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Simples e direto</div>
+          <h2 class="section-title">Como receber</h2>
+          <p class="section-copy">Nesta versão, o pagamento e a entrega são feitos manualmente para você ter controle de cada venda.</p>
+        </div>
+        <div class="how">
+          <div class="how-step"><b>PASSO 01</b><h3>Copie a chave Pix</h3><p>Abra a área de compra e copie a chave mostrada.</p></div>
+          <div class="how-step"><b>PASSO 02</b><h3>Faça o pagamento</h3><p>Envie R$ 19,90 pelo seu banco e confira o destinatário.</p></div>
+          <div class="how-step"><b>PASSO 03</b><h3>Envie o comprovante</h3><p>Fale pelo WhatsApp. Após confirmar o recebimento, o PDF é enviado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" style="padding-top:0">
+      <div class="container faq">
+        <div class="section-head">
+          <div class="eyebrow">Dúvidas frequentes</div>
+          <h2 class="section-title">Antes de comprar</h2>
+        </div>
+        <details>
+          <summary>Como recebo o e-book?</summary>
+          <p>Depois do Pix, envie o comprovante pelo WhatsApp. Após a confirmação do recebimento, você recebe o PDF.</p>
+        </details>
+        <details>
+          <summary>O pagamento é automático?</summary>
+          <p>Não. A confirmação do Pix e o envio do arquivo são feitos manualmente.</p>
+        </details>
+        <details>
+          <summary>O e-book é um tratamento para ansiedade ou depressão?</summary>
+          <p>Não. O material é educativo e de reflexão. Ele não substitui avaliação, diagnóstico ou tratamento realizado por profissionais de saúde.</p>
+        </details>
+        <details>
+          <summary>Posso falar com o vendedor?</summary>
+          <p>Sim. O botão de WhatsApp abre uma conversa direta para você enviar dúvidas ou o comprovante.</p>
+        </details>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <strong>Despertando a Verdade</strong>
-      <p>Conteúdo educativo e de reflexão. O e-book não substitui avaliação, diagnóstico ou tratamento realizado por profissionais de saúde.</p>
-      <p>© <span id="year"></span> • Todos os direitos reservados.</p>
+    <div class="container footer-row">
+      <div><div class="footer-title">DESPERTANDO A VERDADE</div><div>Informação, consciência e reflexão.</div></div>
+      <div>© <span id="year"></span> • Conteúdo educativo. Não substitui cuidado profissional.</div>
     </div>
   </footer>
 
   <dialog id="pixDialog">
     <div class="eyebrow">Pagamento via Pix</div>
-    <h2>Quase lá!</h2>
+    <h2>Finalize sua compra</h2>
     <p>Faça um Pix de <strong>R$ 19,90</strong> usando a chave abaixo.</p>
-    <div class="pix" id="pixKey">vibestreamm@gmail.com</div>
+    <div class="pix-box" id="pixKey">vibestreamm@gmail.com</div>
     <div class="dialog-actions">
-      <button class="btn primary" id="copyPix">COPIAR CHAVE PIX</button>
-      <a class="btn secondary" id="sendProof" href="https://wa.me/5577991039416?text=Ol%C3%A1!%20Fiz%20o%20Pix%20de%20R%24%2019%2C90%20do%20e-book%20Despertando%20a%20Verdade.%20Vou%20enviar%20o%20comprovante." target="_blank" rel="noopener">ENVIAR COMPROVANTE</a>
-      <button class="btn secondary" id="closePix">FECHAR</button>
+      <button class="btn btn-primary" id="copyPix">COPIAR CHAVE PIX</button>
+      <a class="btn btn-secondary" href="https://wa.me/5577991039416?text=Ol%C3%A1!%20Fiz%20o%20Pix%20de%20R%24%2019%2C90%20do%20e-book%20Despertando%20a%20Verdade.%20Vou%20enviar%20o%20comprovante." target="_blank" rel="noopener">ENVIAR COMPROVANTE NO WHATSAPP</a>
+      <button class="btn btn-secondary" id="closePix">VOLTAR À PÁGINA</button>
     </div>
-    <p class="fine">Confira o nome do destinatário no seu banco antes de confirmar o Pix. Só envie o comprovante depois de fazer o pagamento.</p>
+    <p class="micro">Confira o nome do destinatário no seu banco antes de confirmar. O PDF é enviado após a confirmação do recebimento.</p>
   </dialog>
+
+  <div class="toast" id="toast">Chave Pix copiada ✓</div>
+
   <script>
     const dialog = document.getElementById('pixDialog');
+    const toast = document.getElementById('toast');
+    const copyBtn = document.getElementById('copyPix');
+
     document.getElementById('openPix').addEventListener('click', () => dialog.showModal());
     document.getElementById('closePix').addEventListener('click', () => dialog.close());
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('copyPix').addEventListener('click', async () => {
+
+    copyBtn.addEventListener('click', async () => {
       const key = document.getElementById('pixKey').textContent.trim();
       try {
         await navigator.clipboard.writeText(key);
-        document.getElementById('copyPix').textContent = 'CHAVE COPIADA!';
+        copyBtn.textContent = 'CHAVE COPIADA ✓';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1800);
+        setTimeout(() => copyBtn.textContent = 'COPIAR CHAVE PIX', 1800);
       } catch (e) {
-        const selection = window.getSelection();
         const range = document.createRange();
         range.selectNodeContents(document.getElementById('pixKey'));
-        selection.removeAllRanges();
-        selection.addRange(range);
-        document.getElementById('copyPix').textContent = 'SELECIONE E COPIE A CHAVE';
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        copyBtn.textContent = 'SELECIONE E COPIE A CHAVE';
       }
     });
   </script>
