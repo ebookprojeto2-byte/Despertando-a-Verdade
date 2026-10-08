@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a09">
+  <meta name="description" content="Despertando a Verdade: um e-book para refletir sobre ansiedade, saúde emocional e os desafios da vida.">
+  <title>Despertando a Verdade | E-book</title>
+  <style>
+    :root { color-scheme: dark; --bg:#080a09; --panel:#111613; --green:#00e676; --white:#f5f7f5; --muted:#b5c0b9; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(ellipse at 50% 0%, #123021 0, var(--bg) 48%); color:var(--white); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
+    .wrap { width:min(100% - 32px, 980px); margin:auto; }
+    header { padding:24px 0; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { font-weight:900; letter-spacing:.12em; font-size:.9rem; }
+    .brand span { color:var(--green); }
+    .tag { border:1px solid #27543a; color:#a9ffc9; border-radius:999px; padding:6px 10px; font-size:.75rem; }
+    .hero { padding:56px 0 42px; display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:38px; }
+    h1 { font-size:clamp(2.5rem, 7vw, 5rem); line-height:.98; letter-spacing:-.055em; margin:18px 0; }
+    h1 span { color:var(--green); }
+    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:.18em; font-size:.76rem; font-weight:800; }
+    .lead { color:var(--muted); font-size:1.12rem; max-width:620px; }
+    .cover { min-height:360px; border:1px solid #28543a; border-radius:22px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(145deg,#10271a,#080a09 70%); box-shadow:0 22px 70px #0008; position:relative; overflow:hidden; }
+    .cover:before { content:""; position:absolute; width:260px; height:260px; border:1px solid #00e67670; border-radius:50%; right:-90px; top:40px; box-shadow:0 0 0 25px #00e67608,0 0 0 50px #00e67606; }
+    .cover small { color:#a7b9ad; letter-spacing:.18em; z-index:1; }
+    .cover strong { font-size:clamp(2rem,5vw,3.3rem); line-height:.98; letter-spacing:-.04em; z-index:1; }
+    .cover strong span { color:var(--green); }
+    .cover .bottom { color:#a7b9ad; font-size:.82rem; z-index:1; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:0; border-radius:12px; padding:15px 20px; font-weight:900; cursor:pointer; transition:transform .15s; }
+    .btn:hover { transform:translateY(-2px); }
+    .primary { background:var(--green); color:#061109; box-shadow:0 8px 28px #00e67625; }
+    .secondary { border:1px solid #365443; color:var(--white); background:#111613; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+    section { padding:40px 0; }
+    h2 { font-size:clamp(1.65rem,4vw,2.4rem); line-height:1.1; margin:0 0 14px; }
+    .muted { color:var(--muted); }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+    .card { background:var(--panel); border:1px solid #25372c; border-radius:16px; padding:22px; }
+    .num { color:var(--green); font-weight:900; font-size:.8rem; letter-spacing:.1em; }
+    .card h3 { margin:10px 0 8px; font-size:1.1rem; }
+    .card p { margin:0; color:var(--muted); font-size:.95rem; }
+    .buybox { background:linear-gradient(135deg,#12271a,#101411); border:1px solid #28613e; border-radius:22px; padding:clamp(22px,5vw,40px); display:grid; grid-template-columns:1fr auto; align-items:center; gap:24px; }
+    .price { font-size:2.6rem; line-height:1; font-weight:900; margin:10px 0; }
+    .price small { font-size:.9rem; font-weight:500; color:var(--muted); }
+    .fine { font-size:.82rem; color:var(--muted); }
+    .steps { padding-left:22px; color:var(--muted); }
+    .steps li { margin:8px 0; }
+    footer { border-top:1px solid #233027; margin-top:32px; padding:26px 0 40px; color:#92a098; font-size:.85rem; }
+    dialog { width:min(92%,460px); border:1px solid #28613e; border-radius:18px; padding:24px; background:#101511; color:var(--white); }
+    dialog::backdrop { background:#000b; }
+    .pix { background:#080a09; border:1px dashed #3e6b4d; border-radius:10px; padding:14px; overflow-wrap:anywhere; margin:14px 0; color:#b5ffc9; }
+    .dialog-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    @media(max-width:720px) { .hero { grid-template-columns:1fr; padding-top:28px; gap:26px; } .cover { min-height:300px; } .cards { grid-template-columns:1fr; } .buybox { grid-template-columns:1fr; } .buybox .btn { width:100%; } header { align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand">DESPERTANDO<span>+</span></div>
+    <div class="tag">E-BOOK DIGITAL</div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Uma leitura para refletir e evoluir</div>
+        <h1>DESPERTANDO<br>A <span>VERDADE</span></h1>
+        <p class="lead">Entenda melhor a ansiedade, observe os desafios do mundo de hoje e conheça caminhos para cuidar da sua saúde emocional — com informação, reflexão e atitudes possíveis.</p>
+        <div class="actions">
+          <a class="btn primary" href="#comprar">QUERO MEU E-BOOK — R$ 19,90</a>
+          <a class="btn secondary" href="#conteudo">CONHECER O CONTEÚDO</a>
+        </div>
+        <p class="fine">Produto digital em PDF. Após o pagamento, envie o comprovante pelo WhatsApp para receber o arquivo.</p>
+      </div>
+      <div class="cover" role="img" aria-label="Capa ilustrativa do e-book Despertando a Verdade">
+        <small>UM GUIA DE REFLEXÃO</small>
+        <strong>DESPERTANDO<br>A <span>VERDADE</span></strong>
+        <div class="bottom">ANSIEDADE • VIDA • SAÚDE EMOCIONAL</div>
+      </div>
+    </div>
+
+    <section class="wrap" id="conteudo">
+      <div class="eyebrow">O que você vai encontrar</div>
+      <h2>Mais consciência para lidar com a vida real.</h2>
+      <p class="muted">Um material para jovens que querem entender melhor o que sentem, refletir sobre suas escolhas e olhar para o futuro com mais clareza.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="num">01 / ANSIEDADE</div>
+          <h3>Entenda o que acontece com você</h3>
+          <p>Conheça sinais comuns de ansiedade, possíveis fatores envolvidos e estratégias saudáveis para lidar com momentos difíceis.</p>
+        </article>
+        <article class="card">
+          <div class="num">02 / VIDA REAL</div>
+          <h3>Enxergue além das aparências</h3>
+          <p>Reflita sobre redes sociais, pressão dos outros, disciplina, escolhas, dinheiro e construção do futuro.</p>
+        </article>
+        <article class="card">
+          <div class="num">03 / SAÚDE EMOCIONAL</div>
+          <h3>Leve seus sentimentos a sério</h3>
+          <p>Aprenda sobre sinais de alerta relacionados à depressão e a importância de buscar apoio quando necessário.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="comprar">
+      <div class="buybox">
+        <div>
+          <div class="eyebrow">Comece sua leitura</div>
+          <h2>Despertando a Verdade</h2>
+          <p class="muted">Acesso digital em PDF.</p>
+          <div class="price">R$ 19,90 <small>pagamento único</small></div>
+          <p class="fine">O arquivo será enviado após a confirmação manual do pagamento.</p>
+        </div>
+        <button class="btn primary" id="openPix">PAGAR COM PIX</button>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>Como receber seu e-book</h2>
+      <ol class="steps">
+        <li>Toque em “Pagar com Pix” e copie a chave informada.</li>
+        <li>Abra seu banco e faça o Pix de R$ 19,90.</li>
+        <li>Envie o comprovante pelo WhatsApp.</li>
+        <li>Depois de confirmar o recebimento, o vendedor enviará o PDF.</li>
+      </ol>
+      <a class="btn secondary" href="https://wa.me/5577991039416?text=Ol%C3%A1!%20Tenho%20interesse%20no%20e-book%20Despertando%20a%20Verdade%20e%20quero%20enviar%20meu%20comprovante." target="_blank" rel="noopener">FALAR PELO WHATSAPP</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Despertando a Verdade</strong>
+      <p>Conteúdo educativo e de reflexão. O e-book não substitui avaliação, diagnóstico ou tratamento realizado por profissionais de saúde.</p>
+      <p>© <span id="year"></span> • Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <dialog id="pixDialog">
+    <div class="eyebrow">Pagamento via Pix</div>
+    <h2>Quase lá!</h2>
+    <p>Faça um Pix de <strong>R$ 19,90</strong> usando a chave abaixo.</p>
+    <div class="pix" id="pixKey">vibestreamm@gmail.com</div>
+    <div class="dialog-actions">
+      <button class="btn primary" id="copyPix">COPIAR CHAVE PIX</button>
+      <a class="btn secondary" id="sendProof" href="https://wa.me/5577991039416?text=Ol%C3%A1!%20Fiz%20o%20Pix%20de%20R%24%2019%2C90%20do%20e-book%20Despertando%20a%20Verdade.%20Vou%20enviar%20o%20comprovante." target="_blank" rel="noopener">ENVIAR COMPROVANTE</a>
+      <button class="btn secondary" id="closePix">FECHAR</button>
+    </div>
+    <p class="fine">Confira o nome do destinatário no seu banco antes de confirmar o Pix. Só envie o comprovante depois de fazer o pagamento.</p>
+  </dialog>
+  <script>
+    const dialog = document.getElementById('pixDialog');
+    document.getElementById('openPix').addEventListener('click', () => dialog.showModal());
+    document.getElementById('closePix').addEventListener('click', () => dialog.close());
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('copyPix').addEventListener('click', async () => {
+      const key = document.getElementById('pixKey').textContent.trim();
+      try {
+        await navigator.clipboard.writeText(key);
+        document.getElementById('copyPix').textContent = 'CHAVE COPIADA!';
+      } catch (e) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById('pixKey'));
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.getElementById('copyPix').textContent = 'SELECIONE E COPIE A CHAVE';
+      }
+    });
+  </script>
+</body>
+</html>
